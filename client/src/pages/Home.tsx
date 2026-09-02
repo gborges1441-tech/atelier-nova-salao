@@ -21,6 +21,14 @@ const hairImage = "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?
 const nailsImage = "https://images.unsplash.com/photo-1604654894610-df63bc536371?auto=format&fit=crop&w=1200&q=85";
 const studioImage = "https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1400&q=85";
 const detailImage = "https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=1400&q=85";
+// Slot opcional: substitua por uma URL/asset do seu próprio MP4 quando o vídeo do Flow estiver pronto.
+const ownerVideo = "";
+const heroScenes = [
+  { src: heroImage, label: "A matéria" },
+  { src: hairImage, label: "O gesto" },
+  { src: nailsImage, label: "O acabamento" },
+  { src: detailImage, label: "A assinatura" },
+];
 const markImage = "/manus-storage/atelier-nova-mark_78ffdf5a.png";
 
 type ServiceTab = "Cabelo" | "Unhas" | "Ritual Nova";
@@ -71,11 +79,18 @@ export default function Home() {
   const [activeService, setActiveService] = useState<ServiceTab>("Cabelo");
   const [openFaq, setOpenFaq] = useState<number | null>(null);
   const [submitted, setSubmitted] = useState(false);
+  const [activeScene, setActiveScene] = useState(0);
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 32);
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  useEffect(() => {
+    if (ownerVideo || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    const sceneTimer = window.setInterval(() => setActiveScene((scene) => (scene + 1) % heroScenes.length), 5200);
+    return () => window.clearInterval(sceneTimer);
   }, []);
 
   const active = serviceContent[activeService];
@@ -129,8 +144,9 @@ export default function Home() {
 
       <section className="hero" id="top">
         <div className="hero-image-wrap">
-          <img src={heroImage} alt="Modelo com cabelo escultural e manicure ameixa em luz de estúdio" className="hero-image" />
+          {ownerVideo ? <video className="hero-video" autoPlay muted loop playsInline poster={heroImage}><source src={ownerVideo} type="video/mp4" /></video> : <div className="scene-stack" aria-label="Sequência visual Atelier Nova">{heroScenes.map((scene, index) => <img key={scene.src} src={scene.src} alt={scene.label} className={`hero-image scene-image ${activeScene === index ? "is-active" : ""}`} />)}</div>}
           <div className="hero-image-overlay" />
+          <div className="scene-controls" aria-label="Controles da sequência visual">{heroScenes.map((scene, index) => <button key={scene.label} className={activeScene === index ? "is-active" : ""} onClick={() => setActiveScene(index)} aria-label={`Mostrar cena ${scene.label}`}><span>{String(index + 1).padStart(2, "0")}</span><i /></button>)}</div>
         </div>
         <div className="hero-content">
           <div className="eyebrow reveal"><span className="eyebrow-number">01</span> Hair · Nails · Ritual</div>
@@ -141,7 +157,8 @@ export default function Home() {
             <a className="text-link" href="#servicos">Explorar serviços <ArrowDownRight size={16} /></a>
           </div>
         </div>
-        <div className="hero-footnote"><span>Scroll to explore</span><span className="hero-line" /><span>01 / 05</span></div>
+        <div className="hero-footnote"><span>Scroll to explore</span><span className="hero-line" /><span>{ownerVideo ? "film / 01" : `scene / ${String(activeScene + 1).padStart(2, "0")}`}</span></div>
+        <div className="hero-motion-note"><span className="motion-dot" /> Motion story · 00:20</div>
         <div className="hero-side-label">ATELIER NOVA · 2026</div>
       </section>
 
@@ -150,6 +167,13 @@ export default function Home() {
           <span>DIAGNÓSTICO ANTES DO SERVIÇO</span><b>✦</b><span>ACABAMENTO QUE CONTINUA</span><b>✦</b><span>ATENDIMENTO COM HORA MARCADA</span><b>✦</b><span>DIAGNÓSTICO ANTES DO SERVIÇO</span><b>✦</b><span>ACABAMENTO QUE CONTINUA</span><b>✦</b><span>ATENDIMENTO COM HORA MARCADA</span><b>✦</b>
         </div>
       </div>
+
+      <section className="film-strip" aria-label="Filme Atelier Nova">
+        <div className="film-intro"><span className="section-index">01 <span>/ motion study</span></span><h2>O detalhe<br /><i>se move.</i></h2><p>Uma sequência curta sobre o que acontece entre a intenção e o espelho.</p></div>
+        <article className="film-panel film-panel-hair"><img src={hairImage} alt="Cabelo sendo finalizado em um gesto preciso" /><div className="film-panel-overlay" /><div className="film-panel-copy"><span>01 / gesto</span><h3>Começa<br /><i>na mão.</i></h3><p>Precisão é uma forma de cuidado.</p></div></article>
+        <article className="film-panel film-panel-nails"><img src={nailsImage} alt="Manicure ameixa em acabamento editorial" /><div className="film-panel-overlay" /><div className="film-panel-copy"><span>02 / matéria</span><h3>O brilho<br /><i>fica.</i></h3><p>Acabamento que continua depois da porta.</p></div></article>
+        <article className="film-panel film-panel-detail"><img src={detailImage} alt="Textura abstrata de beleza em luz âmbar" /><div className="film-panel-overlay" /><div className="film-panel-copy"><span>03 / assinatura</span><h3>Seu gesto,<br /><i>mais nítido.</i></h3><p>O visual certo não pede explicação.</p></div></article>
+      </section>
 
       <section className="manifesto section-pad" id="experiencia">
         <div className="section-index">02 <span>/ experiência</span></div>

@@ -76,3 +76,13 @@ O wordmark “ATELIER NOVA” deve ser desenhado com serifas de alto contraste, 
 
 ## Regra de decisão
 Quando surgir uma escolha visual, de copy ou de interação, perguntar: **“Isso reforça ou dilui a sensação de ritual preciso, luxo silencioso e próxima ação clara?”**
+
+## Salto audiovisual — decisão desta rodada
+
+A versão anterior acertou a direção editorial, mas ficou com comportamento de landing page estática. A nova versão deve operar como uma campanha audiovisual: o primeiro contato precisa ter uma cena em movimento, ritmo e progressão visual, não apenas uma fotografia hero.
+
+A referência Moto usa o vídeo como prova de valor e como objeto de desejo: o produto aparece em um palco, a página cria expectativa antes de explicar, e os blocos seguintes mudam de escala e contexto para manter retenção. Para o Atelier Nova, a adaptação será um filme curto em loop com cabelo, mãos, brilho de esmalte e gesto de atendimento; o vídeo será silencioso, com fallback de imagem, cobertura escura para leitura e uma indicação de “sound off / motion on” sem exigir áudio.
+
+A narrativa passa a ter quatro atos: **atrair** com a cena hero; **aproximar** com macro de textura e dados de ritual; **provar** com uma sequência de três gestos de serviço; e **converter** com a Nova Start entrando como um cartão de reserva. O movimento será intenso apenas na entrada e nas transições principais, com parallax e zoom muito sutis nas demais áreas. A ambição é parecer uma campanha de marca premium, não uma página com efeitos aplicados por cima.
+
+O vídeo deve ser curto, verticalmente seguro, com o foco visual concentrado à direita para preservar a copy à esquerda. O mobile terá crop próprio e poster estático para conexões lentas. A preferência por redução de movimento desativa vídeo e parallax não essencial, mantendo a mesma hierarquia e CTA.
