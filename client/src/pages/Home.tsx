@@ -16,11 +16,13 @@ import {
   X,
 } from "lucide-react";
 
-const heroImage = "/manus-storage/atelier-nova-hero_07dc0185.jpg";
-const hairImage = "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=1200&q=85";
-const nailsImage = "https://images.unsplash.com/photo-1604654894610-df63bc536371?auto=format&fit=crop&w=1200&q=85";
-const studioImage = "https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1400&q=85";
-const detailImage = "https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=1400&q=85";
+const isGithubPages = import.meta.env.BASE_URL.includes("atelier-nova-salao");
+const pageAsset = (name: string, fallback: string) => isGithubPages ? `${import.meta.env.BASE_URL}site-assets/${name}` : fallback;
+const heroImage = pageAsset("atelier-nova-hero.jpg", "/manus-storage/atelier-nova-hero_07dc0185.jpg");
+const hairImage = pageAsset("atelier-nova-hair-v2.jpg", "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=1200&q=85");
+const nailsImage = pageAsset("atelier-nova-nails-v2.jpg", "https://images.unsplash.com/photo-1604654894610-df63bc536371?auto=format&fit=crop&w=1200&q=85");
+const studioImage = pageAsset("atelier-nova-studio-v2.jpg", "https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1400&q=85");
+const detailImage = pageAsset("atelier-nova-detail-v2.jpg", "https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=1400&q=85");
 // Slot opcional: substitua por uma URL/asset do seu próprio MP4 quando o vídeo do Flow estiver pronto.
 const ownerVideo = "";
 const heroScenes = [
@@ -29,7 +31,7 @@ const heroScenes = [
   { src: nailsImage, label: "O acabamento" },
   { src: detailImage, label: "A assinatura" },
 ];
-const markImage = "/manus-storage/atelier-nova-mark_78ffdf5a.png";
+const markImage = pageAsset("atelier-nova-mark.png", "/manus-storage/atelier-nova-mark_78ffdf5a.png");
 
 type ServiceTab = "Cabelo" | "Unhas" | "Ritual Nova";
 

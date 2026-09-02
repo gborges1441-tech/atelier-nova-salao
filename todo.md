@@ -1,7 +1,8 @@
-# Exportação GitHub — Atelier Nova
+# Correção GitHub Pages — Atelier Nova
 
-- [x] Verificar a conta GitHub conectada e identificar o repositório de destino.
-- [x] Auditar o conteúdo completo do projeto e confirmar que nenhuma pasta necessária foi omitida.
-- [x] Preparar o commit final com todas as pastas e arquivos do site.
-- [x] Criar ou atualizar o repositório GitHub público solicitado.
-- [x] Confirmar a URL do repositório e explicar a diferença entre repositório público e GitHub Pages.
+- [ ] Abrir a URL pública e confirmar o tipo de erro retornado.
+- [ ] Verificar o estado do GitHub Pages e a estrutura publicada no repositório.
+- [ ] Ajustar `base` do Vite, caminhos de assets e fallback de rota para a subpasta do projeto.
+- [ ] Criar build de produção adequado para GitHub Pages.
+- [ ] Atualizar a branch/publicação do GitHub Pages com o build corrigido.
+- [ ] Validar a URL pública final e entregar o link funcional.
