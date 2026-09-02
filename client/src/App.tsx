@@ -1,23 +1,9 @@
-/* Atelier Nova · Luxo editorial noturno: fundo mineral, ameixa, âmbar e interações deliberadas. */
+/* Atelier Nova · Luxo editorial noturno: landing one-page com entrada direta para GitHub Pages. */
 import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
-import NotFound from "@/pages/NotFound";
-import { Route, Switch } from "wouter";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import Home from "./pages/Home";
-
-function Router() {
-  return (
-    <Switch>
-      <Route path="/" component={Home} />
-      <Route path="/atelier-nova-salao" component={Home} />
-      <Route path="/atelier-nova-salao/" component={Home} />
-      <Route path="/404" component={NotFound} />
-      <Route component={Home} />
-    </Switch>
-  );
-}
 
 export default function App() {
   return (
@@ -25,7 +11,7 @@ export default function App() {
       <ThemeProvider defaultTheme="dark">
         <TooltipProvider>
           <Toaster />
-          <Router />
+          <Home />
         </TooltipProvider>
       </ThemeProvider>
     </ErrorBoundary>
