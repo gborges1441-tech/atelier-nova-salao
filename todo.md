@@ -1,7 +1,7 @@
-# Correção visual GitHub Pages — Atelier Nova
+# Refinamento mobile — Atelier Nova
 
-- [x] Abrir a URL pública e comparar a escala real com o preview local.
-- [x] Conferir se o CSS, fontes, viewport e bundle servidos são os atuais.
-- [x] Ajustar a causa da desproporção sem degradar o preview do Manus.
-- [x] Regenerar e enviar o build público atualizado.
-- [x] Validar desktop e mobile na URL final.
+- [ ] Inspecionar a composição atual do hero e identificar as imagens que se repetem visualmente.
+- [ ] Definir um crop mobile exclusivo para a primeira cena e reduzir a competição entre texto e imagem.
+- [ ] Ajustar a sequência de cenas para que cada painel tenha uma função visual distinta no mobile.
+- [ ] Implementar regras responsivas sem alterar a leitura premium do desktop.
+- [ ] Validar mobile e desktop, sincronizar o build público e entregar.

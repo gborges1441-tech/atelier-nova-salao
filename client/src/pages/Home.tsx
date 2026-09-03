@@ -90,7 +90,11 @@ export default function Home() {
   }, []);
 
   useEffect(() => {
-    if (ownerVideo || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    const isMobile = window.matchMedia("(max-width: 640px)").matches;
+    if (ownerVideo || isMobile || window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      setActiveScene(0);
+      return;
+    }
     const sceneTimer = window.setInterval(() => setActiveScene((scene) => (scene + 1) % heroScenes.length), 5200);
     return () => window.clearInterval(sceneTimer);
   }, []);

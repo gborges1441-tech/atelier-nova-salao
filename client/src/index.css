@@ -293,8 +293,12 @@
     .header-cta { padding: .72rem .8rem; font-size: .62rem; }
     .hero { min-height: 92svh; align-items: flex-end; }
     .hero-content { padding: 7rem 1.25rem 6.5rem; }
-    .hero-image-overlay { background: linear-gradient(90deg, rgba(18,15,16,.72), rgba(18,15,16,.26)), linear-gradient(0deg, rgba(18,15,16,.95), transparent 68%); }
-    .hero-image, .hero-video { object-position: 62% center; }
+    .hero-image-overlay { background: linear-gradient(90deg, rgba(18,15,16,.92) 0%, rgba(18,15,16,.66) 42%, rgba(18,15,16,.18) 100%), linear-gradient(0deg, rgba(18,15,16,.96) 0%, rgba(18,15,16,.24) 56%, rgba(18,15,16,.12) 100%); }
+    .hero-image, .hero-video { object-position: 72% 32%; }
+    .scene-image:not(:first-child) { display: none; }
+    .scene-image:first-child { opacity: 1; transform: scale(1.025); }
+    .scene-controls { display: none; }
+    .film-panel-hair { display: none; }
     .hero-title { font-size: clamp(4.6rem, 20vw, 6.4rem); line-height: .79; margin: 1.2rem 0 1.4rem; }
     .hero-copy { font-size: .9rem; line-height: 1.75; max-width: 19rem; }
     .body-copy, .section-intro { font-size: 1rem; }
@@ -303,6 +307,8 @@
     .scene-controls { right: 1.25rem; bottom: 1.6rem; gap: .45rem; }
     .scene-controls button i { width: 1.7rem; }
     .hero-footnote { left: 1.25rem; bottom: 1.7rem; font-size: .55rem; }
+    .hero-footnote .hero-line { width: 3.2rem; }
+    .hero-footnote span:last-child { color: var(--gold); }
     .film-strip { display: block; padding: 5rem 1.25rem 2rem; }
     .film-intro { position: static; padding: 0 0 3.5rem; }
     .film-intro h2 { font-size: 4.8rem; }
