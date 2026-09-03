@@ -175,7 +175,7 @@ export default function Home() {
       </div>
 
       <section className="film-strip" aria-label="Filme Atelier Nova">
-        <div className="film-intro"><span className="section-index">01 <span>/ motion study</span></span><h2>O detalhe<br /><i>se move.</i></h2><p>Uma sequência curta sobre o que acontece entre a intenção e o espelho.</p></div>
+        <div className="film-intro"><span className="section-index">01 <span>/ motion study</span></span><h2>O detalhe<br /><i>se move.</i></h2><p>Uma sequência curta sobre o que acontece entre a intenção e o espelho.</p><div className="film-reel-list" aria-label="Capítulos do motion story"><span><b>01</b><em>A matéria</em></span><span><b>02</b><em>O acabamento</em></span><span><b>03</b><em>A assinatura</em></span></div></div>
         <article className="film-panel film-panel-hair"><img src={hairImage} alt="Cabelo sendo finalizado em um gesto preciso" /><div className="film-panel-overlay" /><div className="film-panel-copy"><span>01 / gesto</span><h3>Começa<br /><i>na mão.</i></h3><p>Precisão é uma forma de cuidado.</p></div></article>
         <article className="film-panel film-panel-nails"><img src={nailsImage} alt="Manicure ameixa em acabamento editorial" /><div className="film-panel-overlay" /><div className="film-panel-copy"><span>02 / matéria</span><h3>O brilho<br /><i>fica.</i></h3><p>Acabamento que continua depois da porta.</p></div></article>
         <article className="film-panel film-panel-detail"><img src={detailImage} alt="Textura abstrata de beleza em luz âmbar" /><div className="film-panel-overlay" /><div className="film-panel-copy"><span>03 / assinatura</span><h3>Seu gesto,<br /><i>mais nítido.</i></h3><p>O visual certo não pede explicação.</p></div></article>
