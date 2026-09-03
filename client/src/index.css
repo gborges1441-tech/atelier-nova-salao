@@ -52,6 +52,7 @@
   --border: rgba(238, 229, 222, .15);
   --input: rgba(238, 229, 222, .18);
   --ring: #d39a72;
+  --mobile-composition-version: 3;
   --radius: .15rem;
 }
 
