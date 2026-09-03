@@ -16,13 +16,14 @@ import {
   X,
 } from "lucide-react";
 
-const isGithubPages = import.meta.env.BASE_URL.includes("atelier-nova-salao");
-const pageAsset = (name: string, fallback: string) => isGithubPages ? `${import.meta.env.BASE_URL}site-assets/${name}` : fallback;
-const heroImage = pageAsset("atelier-nova-hero.jpg", "/manus-storage/atelier-nova-hero_07dc0185.jpg");
-const hairImage = pageAsset("atelier-nova-hair-v2.jpg", "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=1200&q=85");
-const nailsImage = pageAsset("atelier-nova-nails-v2.jpg", "https://images.unsplash.com/photo-1604654894610-df63bc536371?auto=format&fit=crop&w=1200&q=85");
-const studioImage = pageAsset("atelier-nova-studio-v2.jpg", "https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1400&q=85");
-const detailImage = pageAsset("atelier-nova-detail-v2.jpg", "https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=1400&q=85");
+// Preview and GitHub Pages intentionally share one public asset library so every viewport is visually identical.
+const siteAssetRoot = "https://gborges1441-tech.github.io/atelier-nova-salao/site-assets";
+const pageAsset = (name: string) => `${siteAssetRoot}/${name}`;
+const heroImage = pageAsset("atelier-nova-hero.jpg");
+const hairImage = pageAsset("atelier-nova-hair-v2.jpg");
+const nailsImage = pageAsset("atelier-nova-nails-v2.jpg");
+const studioImage = pageAsset("atelier-nova-studio-v2.jpg");
+const detailImage = pageAsset("atelier-nova-detail-v2.jpg");
 // Slot opcional: substitua por uma URL/asset do seu próprio MP4 quando o vídeo do Flow estiver pronto.
 const ownerVideo = "";
 const heroScenes = [
@@ -31,7 +32,7 @@ const heroScenes = [
   { src: nailsImage, label: "O acabamento" },
   { src: detailImage, label: "A assinatura" },
 ];
-const markImage = pageAsset("atelier-nova-mark.png", "/manus-storage/atelier-nova-mark_78ffdf5a.png");
+const markImage = pageAsset("atelier-nova-mark.png");
 
 type ServiceTab = "Cabelo" | "Unhas" | "Ritual Nova";
 
