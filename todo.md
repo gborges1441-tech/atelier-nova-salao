@@ -1,8 +1,7 @@
-# Correção GitHub Pages — Atelier Nova
+# Correção visual GitHub Pages — Atelier Nova
 
-- [x] Abrir a URL pública e confirmar o tipo de erro retornado.
-- [x] Verificar o estado do GitHub Pages e a estrutura publicada no repositório.
-- [x] Ajustar `base` do Vite, caminhos de assets e fallback de rota para a subpasta do projeto.
-- [x] Criar build de produção adequado para GitHub Pages.
-- [x] Atualizar a branch/publicação do GitHub Pages com o build corrigido.
-- [x] Validar a URL pública final e entregar o link funcional.
+- [ ] Abrir a URL pública e comparar a escala real com o preview local.
+- [ ] Conferir se o CSS, fontes, viewport e bundle servidos são os atuais.
+- [ ] Ajustar a causa da desproporção sem degradar o preview do Manus.
+- [ ] Regenerar e enviar o build público atualizado.
+- [ ] Validar desktop e mobile na URL final.

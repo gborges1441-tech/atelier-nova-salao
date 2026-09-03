@@ -56,8 +56,8 @@
 
 @layer base {
   * { @apply border-border outline-ring/50; }
-  html { scroll-behavior: smooth; }
-  body { @apply bg-background text-foreground; margin: 0; font-family: 'Manrope', sans-serif; }
+  html { scroll-behavior: smooth; font-size: 16px; -webkit-text-size-adjust: 100%; }
+  body { @apply bg-background text-foreground; margin: 0; min-width: 320px; font-family: 'Manrope', sans-serif; }
   button, a, input, select { font: inherit; }
   button:not(:disabled), a[href], select:not(:disabled), input:not(:disabled) { cursor: pointer; }
   ::selection { background: #d39a72; color: #120f10; }
@@ -295,8 +295,9 @@
     .hero-content { padding: 7rem 1.25rem 6.5rem; }
     .hero-image-overlay { background: linear-gradient(90deg, rgba(18,15,16,.72), rgba(18,15,16,.26)), linear-gradient(0deg, rgba(18,15,16,.95), transparent 68%); }
     .hero-image, .hero-video { object-position: 62% center; }
-    .hero-title { font-size: clamp(4.1rem, 18vw, 6rem); line-height: .8; margin: 1.2rem 0 1.4rem; }
-    .hero-copy { font-size: .8rem; max-width: 18rem; }
+    .hero-title { font-size: clamp(4.6rem, 20vw, 6.4rem); line-height: .79; margin: 1.2rem 0 1.4rem; }
+    .hero-copy { font-size: .9rem; line-height: 1.75; max-width: 19rem; }
+    .body-copy, .section-intro { font-size: 1rem; }
     .hero-actions { align-items: flex-start; flex-direction: column; gap: 1.15rem; }
     .hero-side-label, .hero-motion-note { display: none; }
     .scene-controls { right: 1.25rem; bottom: 1.6rem; gap: .45rem; }
